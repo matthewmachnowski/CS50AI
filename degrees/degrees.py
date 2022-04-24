@@ -1,7 +1,7 @@
 import csv
 import sys
 
-from util import Node, StackFrontier, QueueFrontier
+from util import Node, QueueFrontier
 
 # Maps names to a set of corresponding person_ids
 names = {}
@@ -70,7 +70,7 @@ def main():
         sys.exit("Person not found.")
 
     path = shortest_path(source, target)
-
+    print(path)
     if path is None:
         print("Not connected.")
     else:
@@ -120,11 +120,11 @@ def shortest_path(source, target):
             return path
 
         # Mark node as explored
-        explored.add((node.action, node.state))
+        explored.add(node.state)
 
         # Add neighbors to frontier
         for action, state in neighbors_for_person(node.state):
-            if not frontier.contains_state(state) and (action, state) not in explored:
+            if not frontier.contains_state(state) and state not in explored:
                 child = Node(state=state, parent=node, action=action)
                 frontier.add(child)
 
