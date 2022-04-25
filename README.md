@@ -1,6 +1,6 @@
 # CS50AI
 
-**Degrees** [see directory](https://github.com/matthewmachnowski/cs50ai/tree/main/degrees)
+**Degrees** [see directory](https://github.com/matthewmachnowski/cs50ai/tree/main/degrees):
     
 * The assignment is about finding the shortest path between two nodes.
 * The solution is based on Breadth-First Search (BFS) because the task requires the shortest path between nodes.
